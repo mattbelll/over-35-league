@@ -19,6 +19,17 @@ const faqs = [
   { q: "When and where are games played?", a: `Games are played every Thursday night at ${site.location} across two sheets of ice — the Palace and Royal rinks.` },
   { q: "How does the season work?", a: "Each team plays a full regular season followed by a single-elimination playoff bracket seeded by the final standings." },
 ];
+
+// "League at a glance" — laid out as a horizontal icon row (see below).
+const glance = [
+  { label: "Founded", value: "2006", icon: "M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+  { label: "Founder", value: "Andrew Miller", icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
+  { label: "Location", value: "Charleston, SC", icon: "M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z M12 10a2 2 0 100-4 2 2 0 000 4z" },
+  { label: "Home rink", value: "Carolina Ice Palace", icon: "M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" },
+  { label: "Game night", value: "Thursdays", icon: "M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { label: "Teams", value: "8", icon: "M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m8 0a4 4 0 10-4 0" },
+  { label: "Age group", value: "35 and up", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+];
 ---
 
 <BaseLayout
@@ -32,32 +43,33 @@ const faqs = [
   />
 
   <!-- Our Story -->
-  <section class="container-page grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.5fr_1fr]">
-    <div class="space-y-5 text-rink-700">
-      <SectionHeading eyebrow="Our Story" title="Where it started" />
-      <p>
-        Founded in 2006 by Andrew Miller, the Over 35 Hockey League at the Carolina Ice Palace in Charleston, South
-        Carolina, was built with a simple vision: create a competitive, welcoming hockey community where players over the
-        age of 35 could continue playing the game they love in the right spirit.
-      </p>
-      <p>
-        A longtime sports journalist, recreational hockey player, sports fan, and passionate community builder, Andrew
-        recognized that many adult hockey leagues had earned a reputation for becoming overly physical, chippy, and driven
-        by ego. He believed there was a better way.
-      </p>
-      <p>
-        From the beginning, the Over 35 Hockey League was founded on the principles of sportsmanship, fair play,
-        friendship, and respect. While every game is played with intensity and a desire to win, the league has always
-        prioritized character over conflict. Opponents battle hard for three periods, shake hands at the final buzzer, and
-        then share a beer together afterward.
-      </p>
-      <p class="text-rink-950 font-semibold">
-        What truly sets the league apart, however, happens away from the rink.
-      </p>
-    </div>
-    <div class="h-fit space-y-6">
+  <section class="container-page py-16 sm:py-20">
+    <div class="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
+      <div class="space-y-5 text-rink-700">
+        <SectionHeading eyebrow="Our Story" title="Where it started" />
+        <p>
+          Founded in 2006 by Andrew Miller, the Over 35 Hockey League at the Carolina Ice Palace in Charleston, South
+          Carolina, was built with a simple vision: create a competitive, welcoming hockey community where players over the
+          age of 35 could continue playing the game they love in the right spirit.
+        </p>
+        <p>
+          A longtime sports journalist, recreational hockey player, sports fan, and passionate community builder, Andrew
+          recognized that many adult hockey leagues had earned a reputation for becoming overly physical, chippy, and driven
+          by ego. He believed there was a better way.
+        </p>
+        <p>
+          From the beginning, the Over 35 Hockey League was founded on the principles of sportsmanship, fair play,
+          friendship, and respect. While every game is played with intensity and a desire to win, the league has always
+          prioritized character over conflict. Opponents battle hard for three periods, shake hands at the final buzzer, and
+          then share a beer together afterward.
+        </p>
+        <p class="text-rink-950 font-semibold">
+          What truly sets the league apart, however, happens away from the rink.
+        </p>
+      </div>
+
       <!-- Founder portrait -->
-      <figure class="overflow-hidden rounded-2xl border border-rink-200 bg-white shadow-sm">
+      <figure class="h-fit overflow-hidden rounded-2xl border border-rink-200 bg-white shadow-sm">
         <img
           src="/images/andrew-miller.jpg"
           alt="Andrew Miller, founder of the Over 35 League"
@@ -73,19 +85,24 @@ const faqs = [
           <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-flare-500 font-display text-lg font-extrabold text-white">'06</span>
         </figcaption>
       </figure>
+    </div>
 
-      <aside class="rounded-2xl border border-rink-200 bg-white p-6 shadow-sm">
-        <h3 class="text-xl">League at a glance</h3>
-        <dl class="mt-4 space-y-3 text-sm">
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Founded</dt><dd class="font-semibold text-rink-950">2006</dd></div>
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Founder</dt><dd class="font-semibold text-rink-950">Andrew Miller</dd></div>
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Location</dt><dd class="font-semibold text-rink-950">Charleston, SC</dd></div>
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Home rink</dt><dd class="font-semibold text-rink-950 text-right">Carolina Ice Palace</dd></div>
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Game night</dt><dd class="font-semibold text-rink-950">Thursdays</dd></div>
-          <div class="flex justify-between border-b border-rink-200 pb-3"><dt class="text-rink-500">Teams</dt><dd class="font-semibold text-rink-950">8</dd></div>
-          <div class="flex justify-between"><dt class="text-rink-500">Age group</dt><dd class="font-semibold text-rink-950">35 and up</dd></div>
-        </dl>
-      </aside>
+    <!-- League at a glance — horizontal icon row -->
+    <div class="mt-14 border-t border-rink-200 pt-10">
+      <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-ice-700">
+        <span class="h-px w-6 bg-flare-500" aria-hidden="true"></span>League at a glance
+      </h3>
+      <dl class="mt-7 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-4 lg:grid-cols-7">
+        {glance.map((stat) => (
+          <div class="flex flex-col items-center gap-2.5 text-center">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-ice-500/10 text-ice-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={stat.icon} /></svg>
+            </span>
+            <dt class="text-xs uppercase tracking-wider text-rink-500">{stat.label}</dt>
+            <dd class="font-display text-lg font-bold leading-tight text-rink-950">{stat.value}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   </section>
 
