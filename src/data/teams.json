@@ -1,0 +1,538 @@
+[
+  {
+    "slug": "dire-wolves",
+    "name": "Dire Wolves",
+    "abbreviation": "DW",
+    "primaryColor": "#035436",
+    "division": "35+",
+    "image": "/images/teams/dire-wolves.jpg",
+    "tagline": "Hunting in a pack at the top of the table.",
+    "description": "The Dire Wolves compete in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Chris Baum",
+        "pos": "D",
+        "round": 9
+      },
+      {
+        "name": "Jim Regan",
+        "pos": "F",
+        "round": 9
+      },
+      {
+        "name": "Shawn Rogowski",
+        "pos": "F",
+        "round": 7
+      },
+      {
+        "name": "Jason Jansen",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Matt Bell",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Tyler LeFebvre",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Lucas Lambert",
+        "pos": "F",
+        "round": 4
+      },
+      {
+        "name": "Zach Mueller",
+        "pos": "G",
+        "round": 7
+      },
+      {
+        "name": "James Rollo",
+        "pos": "D",
+        "round": 3
+      },
+      {
+        "name": "Scott Davies",
+        "pos": "F",
+        "round": 2
+      },
+      {
+        "name": "Dan Agnew",
+        "pos": "D",
+        "round": 3
+      }
+    ]
+  },
+  {
+    "slug": "worldvest",
+    "name": "Worldvest",
+    "abbreviation": "WV",
+    "primaryColor": "#c5141d",
+    "division": "35+",
+    "image": "/images/teams/worldvest.jpg",
+    "tagline": "Reigning Winter 2026 champions, still lighting the lamp.",
+    "description": "Worldvest competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Jay Daratony",
+        "pos": "D",
+        "round": 10
+      },
+      {
+        "name": "Joey Abate",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Chad Moore",
+        "pos": "D",
+        "round": 8
+      },
+      {
+        "name": "Joe Porter",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Evan Stahl",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Mike Grant",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Dan Tanton",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Tony Martin",
+        "pos": "D",
+        "round": 4
+      },
+      {
+        "name": "Mike Kline",
+        "pos": "G",
+        "round": 7
+      },
+      {
+        "name": "Dean Mathewson",
+        "pos": "F",
+        "round": 2
+      },
+      {
+        "name": "Ryan Holtzinger",
+        "pos": "D",
+        "round": 2
+      }
+    ]
+  },
+  {
+    "slug": "holy-city",
+    "name": "Holy City",
+    "abbreviation": "HC",
+    "primaryColor": "#404c23",
+    "division": "35+",
+    "image": "/images/teams/holy-city.jpg",
+    "tagline": "Charleston's own, right in the thick of the race.",
+    "description": "Holy City competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Grant Story",
+        "pos": "D",
+        "round": 10
+      },
+      {
+        "name": "Cody Gaskins",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Joe MacKenzie",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Frank Duggan",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Steve Corby",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Kevin O'Neil",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Sam Fensterstock",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Eric McCue",
+        "pos": "F",
+        "round": 3
+      },
+      {
+        "name": "Mark Hauser",
+        "pos": "D",
+        "round": 4
+      },
+      {
+        "name": "Chris Schuster",
+        "pos": "G",
+        "round": 6
+      },
+      {
+        "name": "Andrew Williamson",
+        "pos": "F",
+        "round": 1
+      }
+    ]
+  },
+  {
+    "slug": "shade-fog",
+    "name": "Shade-FOG",
+    "abbreviation": "SF",
+    "primaryColor": "#3b82c4",
+    "division": "35+",
+    "image": "/images/teams/shade-fog.jpg",
+    "tagline": "Rolling in and making life hard on the top clubs.",
+    "description": "Shade-FOG competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Rob Hayes",
+        "pos": "F",
+        "round": 9
+      },
+      {
+        "name": "Jame Skelton",
+        "pos": "D",
+        "round": 9
+      },
+      {
+        "name": "Ronnie Fink",
+        "pos": "F",
+        "round": 7
+      },
+      {
+        "name": "Brandon Schultz",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Mike Merritt",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Paul LeBlanc",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Matthew Clark",
+        "pos": "F",
+        "round": 4
+      },
+      {
+        "name": "Michael Herman",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Justin Evans",
+        "pos": "D",
+        "round": 3
+      },
+      {
+        "name": "Allen Couture",
+        "pos": "G",
+        "round": 6
+      },
+      {
+        "name": "Andrew Miller",
+        "pos": "F",
+        "round": 1
+      }
+    ]
+  },
+  {
+    "slug": "burns-alley",
+    "name": "Burns Alley",
+    "abbreviation": "BA",
+    "primaryColor": "#111111",
+    "division": "35+",
+    "image": "/images/teams/burns-alley.jpg",
+    "tagline": "High-scoring and never out of a game.",
+    "description": "Burns Alley competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Joey Valesko",
+        "pos": "F",
+        "round": 10
+      },
+      {
+        "name": "Paul Yacobozzi",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "James Starr",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Joe Weschsler",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Brett LeFebvre",
+        "pos": "D",
+        "round": 6
+      },
+      {
+        "name": "Mike Weicowski",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Artie Crisp",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Colby Chisholm",
+        "pos": "D",
+        "round": 4
+      },
+      {
+        "name": "Mark Fiem",
+        "pos": "D",
+        "round": 4
+      },
+      {
+        "name": "Nick Sutto",
+        "pos": "F",
+        "round": 2
+      },
+      {
+        "name": "Larry Issacs",
+        "pos": "G",
+        "round": 6
+      }
+    ]
+  },
+  {
+    "slug": "kingspan",
+    "name": "Kingspan",
+    "abbreviation": "KS",
+    "primaryColor": "#012053",
+    "division": "35+",
+    "image": "/images/teams/kingspan.jpg",
+    "tagline": "Grinding for every point down the stretch.",
+    "description": "Kingspan competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Dan Rogers",
+        "pos": "F",
+        "round": 10
+      },
+      {
+        "name": "Ryan Lovette",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Sean Williams",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Eric Morin",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Ian Chernisky",
+        "pos": "D",
+        "round": 6
+      },
+      {
+        "name": "Matt Siracusa",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Pierce Buster",
+        "pos": "F",
+        "round": 4
+      },
+      {
+        "name": "Casey O'Farrell",
+        "pos": "D",
+        "round": 4
+      },
+      {
+        "name": "Tim McGrath",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Mike Berry",
+        "pos": "G",
+        "round": 5
+      },
+      {
+        "name": "Brent Trenga",
+        "pos": "F",
+        "round": 2
+      }
+    ]
+  },
+  {
+    "slug": "revelry",
+    "name": "Revelry",
+    "abbreviation": "RV",
+    "primaryColor": "#cf031c",
+    "division": "35+",
+    "image": "/images/teams/revelry.jpg",
+    "tagline": "Playing spoiler and having fun doing it.",
+    "description": "Revelry competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Sean Fleming",
+        "pos": "F",
+        "round": 10
+      },
+      {
+        "name": "Trevor Smith",
+        "pos": "D",
+        "round": 9
+      },
+      {
+        "name": "James Swallow",
+        "pos": "F",
+        "round": 7
+      },
+      {
+        "name": "Brandon Fusco",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Russ Fogg",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Pete Nee",
+        "pos": "F",
+        "round": 5
+      },
+      {
+        "name": "Tom Moylan",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Ryan McMillin",
+        "pos": "G",
+        "round": 7
+      },
+      {
+        "name": "Jimmy Evans",
+        "pos": "F",
+        "round": 4
+      },
+      {
+        "name": "Mike Shaw",
+        "pos": "F",
+        "round": 3
+      },
+      {
+        "name": "John Cameron",
+        "pos": "D",
+        "round": 1
+      }
+    ]
+  },
+  {
+    "slug": "baird",
+    "name": "BAIRD",
+    "abbreviation": "BD",
+    "primaryColor": "#002f87",
+    "division": "35+",
+    "image": "/images/teams/baird.jpg",
+    "tagline": "Battling every shift and building toward next season.",
+    "description": "BAIRD competes in the Over 35 League at Carolina Ice Palace.",
+    "roster": [
+      {
+        "name": "Brent Cary",
+        "pos": "F",
+        "round": 10
+      },
+      {
+        "name": "Robby Ryan",
+        "pos": "D",
+        "round": 8
+      },
+      {
+        "name": "Todd Hurteau",
+        "pos": "F",
+        "round": 8
+      },
+      {
+        "name": "Pete Vaska",
+        "pos": "D",
+        "round": 7
+      },
+      {
+        "name": "Mark Mobberly",
+        "pos": "F",
+        "round": 6
+      },
+      {
+        "name": "Kyle Gassert",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Jason Dorman",
+        "pos": "D",
+        "round": 5
+      },
+      {
+        "name": "Brandon Wiley",
+        "pos": "F",
+        "round": 3
+      },
+      {
+        "name": "Marc Dudzinski",
+        "pos": "G",
+        "round": 7
+      },
+      {
+        "name": "Jason Stubbings",
+        "pos": "F",
+        "round": 3
+      },
+      {
+        "name": "Matt Epstein",
+        "pos": "F",
+        "round": 2
+      }
+    ]
+  }
+]

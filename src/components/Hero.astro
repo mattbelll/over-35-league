@@ -1,0 +1,59 @@
+---
+import Button from "./Button.astro";
+import { site } from "@/data/site";
+import { allTeams } from "@/lib/hockey";
+---
+
+<section class="relative overflow-hidden bg-white">
+  <!-- Background accents -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute -top-24 right-0 h-96 w-96 rounded-full bg-ice-400/15 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-flare-500/10 blur-3xl"></div>
+    <div class="grid-lines absolute inset-0 [background-size:56px_56px]"></div>
+  </div>
+
+  <div class="container-page relative grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
+    <div>
+      <span class="inline-flex items-center gap-2 rounded-full border border-ice-500/40 bg-ice-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-ice-700">
+        <span class="h-1.5 w-1.5 rounded-full bg-flare-500"></span>
+        {site.seasonLabel} · Registration open
+      </span>
+      <h1 class="mt-5 text-5xl leading-[0.92] sm:text-6xl lg:text-7xl">
+        Over 35<br />
+        <span class="text-ice-600">Hockey League</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-rink-700">
+        The Over 35 League is a draft recreational hockey league at Carolina Ice Palace for players aged 35 and over.
+        Eight teams, 12+ games per season, every Thursday night — competitive, friendly hockey for players 35 and over.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href="/registration" variant="primary" size="lg">Register your spot</Button>
+        <Button href="/teams" variant="ghost" size="lg">Meet the teams</Button>
+      </div>
+      <dl class="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
+        {[
+          { value: String(allTeams.length), label: "Teams" },
+          { value: "2", label: "Ice Sheets" },
+          { value: "12+", label: "Games/Season" },
+          { value: "Unlimited", label: "Labatts" },
+        ].map((stat) => (
+          <div>
+            <dt class="text-xs uppercase tracking-wider text-rink-500">{stat.label}</dt>
+            <dd class="font-display text-3xl font-extrabold text-rink-950">{stat.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <!-- Champions hero image -->
+    <div class="relative">
+      <img
+        src="/images/hero-champs.jpg"
+        alt="Worldvest, Winter 2026 champions, celebrating with the trophy"
+        width="880"
+        height="1100"
+        class="w-full rounded-2xl border border-rink-200 object-cover shadow-xl"
+      />
+    </div>
+  </div>
+</section>

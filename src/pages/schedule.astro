@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import GameCard from "@/components/GameCard.astro";
+import StandingsTable from "@/components/StandingsTable.astro";
+import { upcomingGames, recentResults } from "@/lib/hockey";
+
+const upcoming = upcomingGames();
+const results = recentResults();
+---
+
+<BaseLayout
+  title="Schedule & Standings"
+  description="Full game schedule, recent results and current standings for the Over 35 League at Carolina Ice Palace."
+>
+  <PageHeader
+    eyebrow="Games & results"
+    title="Schedule & standings"
+    description="Every upcoming game, recent scores, and where each team sits in the standings."
+  />
+
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeading eyebrow="Coming up" title="Upcoming games" />
+    {upcoming.length > 0 ? (
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {upcoming.map((game) => <GameCard game={game} />)}
+      </div>
+    ) : (
+      <p class="mt-8 rounded-xl border border-rink-200 bg-white p-6 text-rink-600 shadow-sm">No games scheduled right now — check back soon.</p>
+    )}
+  </section>
+
+  <section class="border-y border-rink-200 bg-rink-50">
+    <div class="container-page py-16 sm:py-20">
+      <SectionHeading eyebrow="Final scores" title="Recent results" />
+      {results.length > 0 ? (
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {results.map((game) => <GameCard game={game} />)}
+        </div>
+      ) : (
+        <p class="mt-8 rounded-xl border border-rink-200 bg-white p-6 text-rink-600 shadow-sm">No results yet this season.</p>
+      )}
+    </div>
+  </section>
+
+  <section id="standings" class="container-page scroll-mt-20 py-16 sm:py-20">
+    <SectionHeading eyebrow="Where things stand" title="Standings" />
+    <div class="mt-8">
+      <StandingsTable caption="Ranked by points, then goal differential." />
+    </div>
+  </section>
+</BaseLayout>

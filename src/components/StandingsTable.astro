@@ -1,0 +1,55 @@
+---
+import { sortedStandings, standingsMeta } from "@/lib/hockey";
+
+interface Props {
+  caption?: string;
+}
+const { caption } = Astro.props;
+const rows = sortedStandings();
+---
+
+<div class="overflow-x-auto rounded-xl border border-rink-200 bg-white shadow-sm">
+  <table class="w-full min-w-[40rem] border-collapse text-left text-sm">
+    {caption && <caption class="px-4 pt-4 text-left text-xs text-rink-500">{caption}</caption>}
+    <thead>
+      <tr class="border-b border-rink-200 text-xs uppercase tracking-wider text-rink-500">
+        <th scope="col" class="px-4 py-3 font-semibold">#</th>
+        <th scope="col" class="px-4 py-3 font-semibold">Team</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">GP</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">W</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">L</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">OTL</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">T</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">GF</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">GA</th>
+        <th scope="col" class="px-2 py-3 text-center font-semibold">Diff</th>
+        <th scope="col" class="px-3 py-3 text-center font-extrabold text-rink-950">PTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr class="border-b border-rink-100 last:border-0 hover:bg-rink-50">
+          <td class="px-4 py-3 tabular-nums text-rink-400">{row.rank}</td>
+          <th scope="row" class="px-4 py-3 font-semibold">
+            <a href={`/teams/${row.slug}`} class="flex items-center gap-2.5 text-rink-950 hover:text-ice-700">
+              <span class="inline-block h-3 w-3 rounded-sm" style={`background:${row.team?.primaryColor ?? "#94a3b8"}`} aria-hidden="true"></span>
+              {row.team?.name ?? row.slug}
+            </a>
+          </th>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.gp}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.w}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.l}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.otl}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.t}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.gf}</td>
+          <td class="px-2 py-3 text-center tabular-nums text-rink-600">{row.ga}</td>
+          <td class={`px-2 py-3 text-center tabular-nums ${row.diff > 0 ? "text-ice-700" : row.diff < 0 ? "text-flare-600" : "text-rink-500"}`}>
+            {row.diff > 0 ? `+${row.diff}` : row.diff}
+          </td>
+          <td class="px-3 py-3 text-center font-display text-lg font-extrabold tabular-nums text-rink-950">{row.pts}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+<p class="mt-3 text-xs text-rink-500">Updated {standingsMeta.updated}. {standingsMeta.note}</p>

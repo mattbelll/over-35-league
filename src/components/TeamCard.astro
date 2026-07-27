@@ -1,0 +1,36 @@
+---
+import type { Team } from "@/lib/hockey";
+interface Props {
+  team: Team;
+}
+const { team } = Astro.props;
+---
+
+<a
+  href={`/teams/${team.slug}`}
+  class="group flex flex-col overflow-hidden rounded-xl border border-rink-200 bg-white shadow-sm transition-transform hover:-translate-y-1 hover:border-ice-400"
+>
+  <!-- 1:1 square team profile image (placeholder — swap in a real team photo) -->
+  <div class="relative aspect-square w-full overflow-hidden bg-rink-100">
+    <img
+      src={team.image}
+      alt={`${team.name} team photo`}
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+  <div class="h-1.5 w-full" style={`background:${team.primaryColor}`} aria-hidden="true"></div>
+  <div class="flex items-center justify-between gap-3 p-5">
+    <h3 class="text-2xl leading-none text-rink-950 group-hover:text-ice-700">{team.name}</h3>
+    <span
+      class="grid h-11 w-11 shrink-0 place-items-center rounded-lg font-display text-sm font-extrabold text-white"
+      style={`background:${team.primaryColor}`}
+    >
+      {team.abbreviation}
+    </span>
+  </div>
+  <div class="mt-auto flex items-center justify-end border-t border-rink-200 px-5 py-3 text-xs">
+    <span class="font-semibold text-ice-700 group-hover:text-ice-800">View team →</span>
+  </div>
+</a>

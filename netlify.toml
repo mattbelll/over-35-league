@@ -1,0 +1,9 @@
+# Netlify build configuration for the Frostbite Adult Hockey League site.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Astro outputs static HTML; Netlify Forms detects the form markup at deploy time.

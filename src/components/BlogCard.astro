@@ -1,0 +1,45 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  tags?: string[];
+  heroImage?: string;
+}
+const { href, title, description, pubDate, author, tags = [], heroImage } = Astro.props;
+const dateLabel = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+}).format(pubDate);
+---
+
+<article class="group flex flex-col overflow-hidden rounded-xl border border-rink-200 bg-white shadow-sm transition-transform hover:-translate-y-1 hover:border-ice-400">
+  <a href={href} class="block aspect-[16/9] overflow-hidden bg-rink-100">
+    {heroImage ? (
+      <img src={heroImage} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+    ) : (
+      <div class="grid h-full w-full place-items-center bg-gradient-to-br from-rink-100 to-rink-200 font-display text-3xl text-rink-400">FH</div>
+    )}
+  </a>
+  <div class="flex flex-1 flex-col gap-3 p-5">
+    <div class="flex flex-wrap items-center gap-2 text-xs text-rink-500">
+      <time datetime={pubDate.toISOString()}>{dateLabel}</time>
+      <span aria-hidden="true">·</span>
+      <span>{author}</span>
+    </div>
+    <h3 class="text-xl leading-tight">
+      <a href={href} class="text-rink-950 hover:text-ice-700">{title}</a>
+    </h3>
+    <p class="text-sm text-rink-600">{description}</p>
+    {tags.length > 0 && (
+      <ul class="mt-auto flex flex-wrap gap-2 pt-2">
+        {tags.map((tag) => (
+          <li class="rounded-full bg-rink-100 px-2.5 py-0.5 text-xs text-ice-700">#{tag}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+</article>

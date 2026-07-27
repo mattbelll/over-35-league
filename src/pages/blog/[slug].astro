@@ -1,0 +1,101 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/Button.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateLabel = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(post.data.pubDate);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.heroImage}
+  type="article"
+>
+  <article class="container-page max-w-3xl py-14 sm:py-20">
+    <a href="/blog" class="text-sm font-semibold text-ice-700 hover:text-ice-800">← All posts</a>
+
+    <header class="mt-4">
+      <div class="flex flex-wrap items-center gap-2 text-sm text-rink-500">
+        <time datetime={post.data.pubDate.toISOString()}>{dateLabel}</time>
+        <span aria-hidden="true">·</span>
+        <span>{post.data.author}</span>
+      </div>
+      <h1 class="mt-3 text-4xl leading-tight sm:text-5xl">{post.data.title}</h1>
+      <p class="mt-4 text-lg text-rink-700">{post.data.description}</p>
+      {post.data.tags.length > 0 && (
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {post.data.tags.map((tag) => (
+            <li class="rounded-full bg-rink-100 px-2.5 py-0.5 text-xs text-ice-700">#{tag}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    {post.data.heroImage && (
+      <img src={post.data.heroImage} alt="" class="mt-8 aspect-[16/9] w-full rounded-2xl border border-rink-200 object-cover" />
+    )}
+
+    <div class="prose-hockey mt-10">
+      <Content />
+    </div>
+
+    <div class="mt-12 border-t border-rink-200 pt-8">
+      <Button href="/registration" variant="primary">Register for the season</Button>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  /* Lightweight article typography (no @tailwindcss/typography dependency). */
+  .prose-hockey {
+    color: var(--color-rink-700);
+    line-height: 1.75;
+  }
+  .prose-hockey > * + * { margin-top: 1.25rem; }
+  .prose-hockey h2 {
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    line-height: 1.1;
+    color: var(--color-rink-950);
+    margin-top: 2.5rem;
+    text-transform: uppercase;
+  }
+  .prose-hockey h3 {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    color: var(--color-rink-950);
+    margin-top: 2rem;
+  }
+  .prose-hockey a { color: var(--color-ice-700); text-decoration: underline; }
+  .prose-hockey a:hover { color: var(--color-ice-800); }
+  .prose-hockey strong { color: var(--color-rink-950); }
+  .prose-hockey ul, .prose-hockey ol { padding-left: 1.5rem; }
+  .prose-hockey ul { list-style: disc; }
+  .prose-hockey ol { list-style: decimal; }
+  .prose-hockey li { margin-top: 0.5rem; }
+  .prose-hockey blockquote {
+    border-left: 3px solid var(--color-flare-500);
+    padding-left: 1rem;
+    font-style: italic;
+    color: var(--color-rink-600);
+  }
+  .prose-hockey code {
+    background: var(--color-rink-100);
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    color: var(--color-ice-700);
+  }
+</style>

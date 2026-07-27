@@ -1,0 +1,107 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import Button from "@/components/Button.astro";
+import { site } from "@/data/site";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with the Over 35 League — questions about registration, teams, sponsorship or anything else."
+>
+  <PageHeader
+    eyebrow="Get in touch"
+    title="Contact us"
+    description="Questions about joining, sponsoring, or anything else? Send us a message and we'll get back to you."
+  />
+
+  <section class="container-page grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.4fr_1fr]">
+    <!-- Netlify Forms: data-netlify enables detection; the hidden input names the form. -->
+    <div>
+      <h2 class="text-2xl">Send a message</h2>
+      <form
+        name="contact"
+        method="POST"
+        action="/thank-you/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="mt-6 space-y-5"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <!-- Honeypot field (hidden from humans, catches bots) -->
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-rink-700">Name</label>
+            <input
+              id="name" name="name" type="text" required autocomplete="name"
+              class="mt-1.5 w-full rounded-lg border border-rink-300 bg-white px-4 py-2.5 text-rink-900 placeholder-rink-400 focus:border-ice-500 focus:outline-none focus:ring-1 focus:ring-ice-500"
+              placeholder="Alex Rivera"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-rink-700">Email</label>
+            <input
+              id="email" name="email" type="email" required autocomplete="email"
+              class="mt-1.5 w-full rounded-lg border border-rink-300 bg-white px-4 py-2.5 text-rink-900 placeholder-rink-400 focus:border-ice-500 focus:outline-none focus:ring-1 focus:ring-ice-500"
+              placeholder="you@example.com"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="subject" class="block text-sm font-semibold text-rink-700">Topic</label>
+          <select
+            id="subject" name="subject"
+            class="mt-1.5 w-full rounded-lg border border-rink-300 bg-white px-4 py-2.5 text-rink-900 focus:border-ice-500 focus:outline-none focus:ring-1 focus:ring-ice-500"
+          >
+            <option>Joining the league</option>
+            <option>Free agent placement</option>
+            <option>Sponsorship</option>
+            <option>General question</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold text-rink-700">Message</label>
+          <textarea
+            id="message" name="message" rows="6" required
+            class="mt-1.5 w-full rounded-lg border border-rink-300 bg-white px-4 py-2.5 text-rink-900 placeholder-rink-400 focus:border-ice-500 focus:outline-none focus:ring-1 focus:ring-ice-500"
+            placeholder="Tell us a bit about yourself and how we can help…"
+          ></textarea>
+        </div>
+
+        <Button type="submit" variant="primary" size="lg">Send message</Button>
+      </form>
+    </div>
+
+    <!-- Contact details -->
+    <aside class="space-y-6">
+      <div class="rounded-2xl border border-rink-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl">League office</h2>
+        <ul class="mt-4 space-y-4 text-sm">
+          <li>
+            <p class="text-rink-500">Home rink</p>
+            <p class="font-semibold text-rink-950">{site.location}</p>
+          </li>
+          <li>
+            <p class="text-rink-500">Email</p>
+            <a href={`mailto:${site.email}`} class="font-semibold text-ice-700 hover:text-ice-800">{site.email}</a>
+          </li>
+          <li>
+            <p class="text-rink-500">Phone</p>
+            <a href={`tel:${site.phone.replace(/[^0-9+]/g, "")}`} class="font-semibold text-ice-700 hover:text-ice-800">{site.phone}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-rink-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl">Ready to play?</h2>
+        <p class="mt-2 text-sm text-rink-600">Skip the form and jump straight to registration.</p>
+        <div class="mt-4"><Button href="/registration" variant="secondary" class="w-full">Register now</Button></div>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

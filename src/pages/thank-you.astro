@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/Button.astro";
+---
+
+<BaseLayout title="Thanks" description="Your message has been sent." noindex={true}>
+  <section class="container-page flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+    <span class="grid h-16 w-16 place-items-center rounded-full bg-ice-500/10 text-ice-700">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-5xl">Message sent!</h1>
+    <p class="mt-4 max-w-md text-rink-700">Thanks for reaching out. Someone from the league office will get back to you within a couple of days.</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <Button href="/" variant="secondary">Back home</Button>
+      <Button href="/registration" variant="primary">Register for the season</Button>
+    </div>
+  </section>
+</BaseLayout>

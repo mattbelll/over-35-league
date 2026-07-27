@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------
+   Over 35 League — design tokens
+   Tailwind v4 reads these @theme values to generate utilities such as
+   `bg-ice-500`, `text-rink`, `font-display`, etc.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Brand palette: cold steel + ice blue with a high-energy orange accent */
+  --color-rink-50: #eef4fb;
+  --color-rink-100: #d5e2f2;
+  --color-rink-200: #aec6e4;
+  --color-rink-300: #7ea3d2;
+  --color-rink-400: #4f7cbb;
+  --color-rink-500: #2f5b9c;
+  --color-rink-600: #24467c;
+  --color-rink-700: #1d3862;
+  --color-rink-800: #152840;
+  --color-rink-900: #0d1a2b;
+  --color-rink-950: #070f1a;
+
+  --color-ice-50: #eefbff;
+  --color-ice-100: #d3f4fd;
+  --color-ice-200: #ade9fb;
+  --color-ice-300: #74d9f7;
+  --color-ice-400: #33c1ee;
+  --color-ice-500: #0aa3d8;
+  --color-ice-600: #0a83b6;
+  --color-ice-700: #106893;
+  --color-ice-800: #165777;
+  --color-ice-900: #174865;
+
+  --color-flare-50: #fff5ed;
+  --color-flare-100: #ffe8d4;
+  --color-flare-200: #ffcda8;
+  --color-flare-300: #ffaa70;
+  --color-flare-400: #ff7a37;
+  --color-flare-500: #ff5a10;
+  --color-flare-600: #f03d06;
+  --color-flare-700: #c72d07;
+  --color-flare-800: #9e260e;
+  --color-flare-900: #7f230f;
+
+  /* Typography */
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Web fonts (kept minimal for fast loading) */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: local("Barlow Condensed");
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply bg-white text-rink-800 antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    @apply font-bold uppercase tracking-tight text-rink-950;
+  }
+
+  /* Visible keyboard focus for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ice-600;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Diagonal "sports" section divider accents */
+  .skew-accent {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+
+  /* Subtle "rink" grid overlay for hero / page headers (dark lines on light) */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(13, 26, 43, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(13, 26, 43, 0.06) 1px, transparent 1px);
+  }
+}

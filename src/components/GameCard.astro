@@ -1,0 +1,58 @@
+---
+import { gameSide, formatGameDate, type Game } from "@/lib/hockey";
+
+interface Props {
+  game: Game;
+}
+const { game } = Astro.props;
+const isFinal = game.status === "final";
+const isPlayoff = game.type === "playoff";
+
+const away = gameSide(game, "away");
+const home = gameSide(game, "home");
+const homeWin = isFinal && (game.homeScore ?? 0) > (game.awayScore ?? 0);
+const awayWin = isFinal && (game.awayScore ?? 0) > (game.homeScore ?? 0);
+
+const sides = [
+  { ...away, win: awayWin },
+  { ...home, win: homeWin },
+];
+---
+
+<article class="flex flex-col gap-3 rounded-xl border border-rink-200 bg-white p-5 shadow-sm transition-colors hover:border-ice-400">
+  <div class="flex items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
+    <span class="flex items-center gap-2">
+      <time datetime={game.date} class="text-ice-700">{formatGameDate(game.date)}</time>
+      {game.startTime && <span class="text-rink-500">· {game.startTime}</span>}
+      {isPlayoff && <span class="rounded bg-rink-800 px-2 py-0.5 text-white">Playoff</span>}
+    </span>
+    <span class={isFinal ? "rounded bg-rink-100 px-2 py-0.5 text-rink-600" : "rounded bg-flare-500/10 px-2 py-0.5 text-flare-700"}>
+      {isFinal ? (game.ot ? "Final / OT" : "Final") : "Upcoming"}
+    </span>
+  </div>
+
+  <div class="space-y-2">
+    {sides.map((side) => (
+      <div class="flex items-center justify-between gap-3">
+        {side.team ? (
+          <a href={`/teams/${side.slug}`} class="flex items-center gap-2.5 font-display text-lg font-bold text-rink-950 hover:text-ice-700">
+            <span class="inline-block h-3.5 w-3.5 rounded-sm" style={`background:${side.team.primaryColor}`} aria-hidden="true"></span>
+            {side.name}
+          </a>
+        ) : (
+          <span class="flex items-center gap-2.5 font-display text-lg font-bold text-rink-600">
+            <span class="inline-block h-3.5 w-3.5 rounded-sm bg-rink-300" aria-hidden="true"></span>
+            {side.name}
+          </span>
+        )}
+        {isFinal && (
+          <span class={`font-display text-xl font-extrabold tabular-nums ${side.win ? "text-rink-950" : "text-rink-400"}`}>
+            {side.score}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <p class="text-xs text-rink-500">{game.arena}</p>
+</article>

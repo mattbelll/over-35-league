@@ -1,0 +1,67 @@
+---
+import { site, nav } from "@/data/site";
+import Button from "./Button.astro";
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? path === "/" : path.startsWith(href);
+---
+
+<header class="sticky top-0 z-50 border-b border-rink-200 bg-white/85 backdrop-blur">
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label={`${site.name} home`}>
+      <img src="/images/logo.png" alt={site.name} width="1080" height="560" class="h-[53px] w-auto sm:h-[59px]" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+          class={`rounded px-3 py-2 text-sm font-semibold transition-colors ${
+            isActive(item.href)
+              ? "text-ice-700"
+              : "text-rink-700 hover:text-rink-950"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden md:block">
+      <Button href="/registration" size="md">Register</Button>
+    </div>
+
+    <!-- Mobile menu toggle (CSS-only via <details>) -->
+    <details class="group relative md:hidden">
+      <summary
+        class="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-md border border-rink-300 text-rink-800 [&::-webkit-details-marker]:hidden"
+        aria-label="Toggle navigation menu"
+      >
+        <svg class="h-6 w-6 group-open:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <svg class="hidden h-6 w-6 group-open:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </summary>
+      <nav
+        class="absolute right-0 mt-2 w-56 rounded-lg border border-rink-200 bg-white p-2 shadow-xl"
+        aria-label="Mobile"
+      >
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class={`block rounded px-3 py-2.5 text-base font-semibold ${
+              isActive(item.href) ? "bg-rink-50 text-ice-700" : "text-rink-700 hover:bg-rink-50"
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+        <a href="/registration" class="mt-1 block rounded bg-flare-500 px-3 py-2.5 text-center text-base font-bold uppercase text-white">
+          Register
+        </a>
+      </nav>
+    </details>
+  </div>
+</header>

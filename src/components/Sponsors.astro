@@ -1,0 +1,25 @@
+---
+// League sponsors. Logos are recolored to a single brand navy (#22457C) on a
+// transparent background so the sponsor row reads as one consistent set.
+const sponsors = [
+  { name: "Revelry Brewing", logo: "/images/sponsors/revelry.png" },
+  { name: "Burns Alley", logo: "/images/sponsors/burns-alley.png" },
+  { name: "Kingspan", logo: "/images/sponsors/kingspan.png" },
+  { name: "Worldvest", logo: "/images/sponsors/worldvest.png" },
+  { name: "Holy City Construction", logo: "/images/sponsors/holy-city.png" },
+];
+---
+
+<div class="grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+  {sponsors.map((s) => (
+    <div class="flex h-16 w-full items-center justify-center">
+      <img
+        src={s.logo}
+        alt={`${s.name} logo`}
+        loading="lazy"
+        decoding="async"
+        class="max-h-11 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100"
+      />
+    </div>
+  ))}
+</div>

@@ -1,0 +1,128 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import GameCard from "@/components/GameCard.astro";
+import StandingsTable from "@/components/StandingsTable.astro";
+import TeamCard from "@/components/TeamCard.astro";
+import BlogCard from "@/components/BlogCard.astro";
+import Sponsors from "@/components/Sponsors.astro";
+import CTASection from "@/components/CTASection.astro";
+import Button from "@/components/Button.astro";
+import { allTeams, upcomingGames } from "@/lib/hockey";
+import { getCollection } from "astro:content";
+
+const games = upcomingGames(4);
+const teams = allTeams;
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+
+const overview = [
+  { title: "Players 35 and up", body: "A league built for grown-ups who still love the game — competitive, but no egos required.", icon: "M12 3l9 4.5-9 4.5-9-4.5L12 3z" },
+  { title: "Full season of hockey", body: "A complete regular season plus playoffs, with games most weeknights across two rinks.", icon: "M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+  { title: "One home facility", body: "Every game at Carolina Ice Palace — two sheets of ice, modern locker rooms, cold drinks after.", icon: "M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" },
+  { title: "Community first", body: "Post-game hangouts, real sportsmanship, and a group that keeps coming back season after season.", icon: "M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0" },
+];
+---
+
+<BaseLayout>
+  <Hero />
+
+  <!-- 2. Upcoming games -->
+  <section class="container-page py-16 sm:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <SectionHeading eyebrow="On the schedule" title="Upcoming games" />
+      <Button href="/schedule" variant="ghost">Full schedule</Button>
+    </div>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {games.map((game) => <GameCard game={game} />)}
+    </div>
+  </section>
+
+  <!-- 3. Current standings -->
+  <section class="border-y border-rink-200 bg-rink-50">
+    <div class="container-page py-16 sm:py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <SectionHeading eyebrow="Where things stand" title="Current standings" />
+        <Button href="/schedule#standings" variant="ghost">Results &amp; standings</Button>
+      </div>
+      <div class="mt-8">
+        <StandingsTable />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. League overview -->
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeading eyebrow="What we're about" title="A rec league built for real life" align="center" class="mx-auto max-w-2xl" />
+    <p class="mx-auto mt-4 max-w-2xl text-center text-rink-700">
+      The Over 35 League is recreational hockey without the ego. Show up, play hard, shake hands, and do it again next week.
+    </p>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {overview.map((item) => (
+        <div class="rounded-xl border border-rink-200 bg-white p-6 shadow-sm">
+          <span class="grid h-11 w-11 place-items-center rounded-lg bg-ice-500/10 text-ice-700">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={item.icon} /></svg>
+          </span>
+          <h3 class="mt-4 text-xl">{item.title}</h3>
+          <p class="mt-2 text-sm text-rink-600">{item.body}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-10 text-center">
+      <Button href="/about" variant="secondary">More about the league</Button>
+    </div>
+  </section>
+
+  <!-- 5. Teams grid -->
+  <section class="border-y border-rink-200 bg-rink-50">
+    <div class="container-page py-16 sm:py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <SectionHeading eyebrow="Eight teams, one rink" title="Meet the teams" />
+        <Button href="/teams" variant="ghost">All teams</Button>
+      </div>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {teams.map((team) => <TeamCard team={team} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Registration CTA -->
+  <CTASection />
+
+  <!-- 7. Latest blog posts -->
+  <section class="container-page py-16 sm:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <SectionHeading eyebrow="From the league office" title="Latest news" />
+      <Button href="/blog" variant="ghost">All posts</Button>
+    </div>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <BlogCard
+          href={`/blog/${post.id}`}
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          author={post.data.author}
+          tags={post.data.tags}
+          heroImage={post.data.heroImage}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- 8. Sponsors -->
+  <section class="border-t border-rink-200 bg-rink-50">
+    <div class="container-page py-16">
+      <SectionHeading eyebrow="Proudly supported by" title="Our sponsors" align="center" class="mx-auto max-w-2xl" />
+      <div class="mt-10">
+        <Sponsors />
+      </div>
+      <p class="mt-8 text-center text-sm text-rink-500">
+        Interested in sponsoring the league? <a href="/contact" class="font-semibold text-ice-700 hover:text-ice-800">Get in touch →</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

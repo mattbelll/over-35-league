@@ -1,0 +1,21 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}
+const { eyebrow, title, description } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-rink-200 bg-rink-50">
+  <div class="grid-lines pointer-events-none absolute inset-0 [background-size:48px_48px]" aria-hidden="true"></div>
+  <div class="container-page relative py-14 sm:py-20">
+    {eyebrow && (
+      <span class="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-ice-700">
+        <span class="h-px w-6 bg-flare-500" aria-hidden="true"></span>{eyebrow}
+      </span>
+    )}
+    <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl">{title}</h1>
+    {description && <p class="mt-4 max-w-2xl text-lg text-rink-700">{description}</p>}
+  </div>
+</section>

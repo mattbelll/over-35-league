@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha \"Andrew Miller.png\")",
+      "Bash(sips -s format jpeg -s formatOptions 88 -Z 720 \"/Users/matthewbell/Downloads/Andrew Miller.png\" --out \"/Users/matthewbell/Documents/Projects/over-35-league/public/images/andrew-miller.jpg\")",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/matthewbell/Documents/Projects/over-35-league/public/images/andrew-miller.jpg\")",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Initial commit: Over 35 League website \\(Astro + Tailwind\\) *)"
+    ]
+  }
+}
