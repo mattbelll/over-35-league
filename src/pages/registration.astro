@@ -21,12 +21,22 @@ import { site } from "@/data/site";
     <SectionHeading eyebrow="Sign up" title="Join the waitlist" align="center" class="mx-auto max-w-2xl" />
     <div class="mx-auto mt-8 max-w-3xl">
       {site.registrationEmbedUrl ? (
-        <div class="overflow-hidden rounded-2xl border border-rink-200 bg-white shadow-sm">
+        <!-- Google Forms is cross-origin, so we can't hide its "created inside of …"
+             org footer directly or read the form's height. Two behaviors:
+             • Desktop (md+): the form width is fixed (max-w-3xl), so its height is
+               predictable. The wrapper is `overflow-hidden` at 1815px — just above
+               the footer — while the iframe (1920px) is taller, clipping the footer
+               off. Reliable.
+             • Mobile (< md): the form height varies with screen width and is taller
+               (~2200px on narrow phones), so cropping risks cutting real questions.
+               No crop here — the iframe (2300px) is tall enough to show the whole
+               form with no inner scrollbar; the org footer stays visible on phones. -->
+        <div class="overflow-hidden rounded-2xl border border-rink-200 bg-white shadow-sm md:h-[1815px]">
           <iframe
             src={site.registrationEmbedUrl}
             title="League waitlist form"
             loading="lazy"
-            class="h-[1669px] w-full"
+            class="block h-[2300px] w-full sm:h-[2060px] md:h-[1920px]"
           ></iframe>
         </div>
       ) : (
