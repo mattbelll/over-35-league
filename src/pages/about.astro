@@ -3,7 +3,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import SectionHeading from "@/components/SectionHeading.astro";
 import CTASection from "@/components/CTASection.astro";
-import { site } from "@/data/site";
 
 const values = [
   { title: "Respect the game", body: "Play hard, play clean. Referees' calls are final and handshakes are mandatory." },
@@ -13,11 +12,12 @@ const values = [
 ];
 
 const faqs = [
-  { q: "Who can play in the Over 35 League?", a: "Any adult hockey player aged 35 and over. Skill levels range from returning rec players to former competitive skaters — the league keeps rosters balanced so games stay fun and competitive." },
-  { q: "Can I register without a team?", a: "Yes. Sign up as a free agent and the league office will place you with a team that needs skaters." },
-  { q: "What equipment do I need?", a: "Full protective gear is required: helmet with cage or shield, skates, gloves, pads, and a stick. If you're just getting back into it, rentals are available at the rink." },
-  { q: "When and where are games played?", a: `Games are played every Thursday night at ${site.location} across two sheets of ice — the Palace and Royal rinks.` },
-  { q: "How does the season work?", a: "Each team plays a full regular season followed by a single-elimination playoff bracket seeded by the final standings." },
+  { q: "Who can play in the Over 35 League?", a: "Any adult hockey player aged 35 and over. Skill levels range from returning rec players to former competitive players and retired professionals. The league keeps rosters balanced so games stay fun and competitive." },
+  { q: "How does the draft work?", a: "All registered players are assigned a skill rating and entered into the draft pool. Captains select a draft position at random, and draft their team each season. Every season each team is different. This makes for balanced skill levels on all teams." },
+  { q: "Can I register without a team?", a: "Yes. That's the only way to do it, as captains are already assigned. Sign up as an individual player and you will be drafted to a team before the start of the season." },
+  { q: "What equipment do I need?", a: "Full protective gear is required: helmet with cage or shield, skates, gloves, elbows, shin guards, and pants are required. Shoulder pads are optional." },
+  { q: "When and where are games played?", a: "Games are played every Thursday night at the Carolina Ice Palace in North Charleston, SC across two sheets of ice, the Palace and Royal rinks. Game times are published before the start of every season, and typically begin after 7:30PM." },
+  { q: "How does the season work?", a: "Each team plays a full regular season schedule of 12-14 games followed by a single-elimination playoff bracket seeded by the final standings. The top six out of eight teams at the end of the regular season make the playoffs." },
 ];
 
 // "League at a glance" — laid out as a horizontal icon row (see below).

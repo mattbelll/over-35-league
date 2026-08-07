@@ -16,7 +16,8 @@ export const site = {
   seasonLabel: "Summer 2026 Season",
   registrationUrl: "/registration",
   // Drop your Tally or Google Forms embed URL here to activate the live form.
-  registrationEmbedUrl: "" as string,
+  registrationEmbedUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSeJb3Z3kVAJ_BHzV-81Az62iUDj0Av5Rz6qP980zbKegzbW7A/viewform?embedded=true" as string,
   social: {
     facebook: "https://facebook.com/",
     instagram: "https://instagram.com/",

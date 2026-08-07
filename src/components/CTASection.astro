@@ -1,6 +1,5 @@
 ---
 import Button from "./Button.astro";
-import { site } from "@/data/site";
 ---
 
 <section class="relative overflow-hidden">
@@ -8,10 +7,10 @@ import { site } from "@/data/site";
     <div class="relative overflow-hidden rounded-2xl border border-rink-200 bg-gradient-to-br from-ice-50 via-white to-rink-100 px-6 py-12 text-center shadow-sm sm:px-12">
       <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-flare-500/15 blur-3xl" aria-hidden="true"></div>
       <div class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-ice-500/15 blur-3xl" aria-hidden="true"></div>
-      <p class="relative text-sm font-bold uppercase tracking-[0.2em] text-ice-700">{site.seasonLabel}</p>
-      <h2 class="relative mx-auto mt-3 max-w-2xl text-4xl sm:text-5xl">Your roster spot is waiting</h2>
+      <p class="relative text-sm font-bold uppercase tracking-[0.2em] text-ice-700">Join an Upcoming Season</p>
+      <h2 class="relative mx-auto mt-3 max-w-2xl text-4xl sm:text-5xl">Join the Over 35 Hockey League</h2>
       <p class="relative mx-auto mt-4 max-w-xl text-rink-700">
-        Sign up as a full team or a free agent. Players 35 and up of all levels welcome — we'll place you with a team and get you on the ice.
+        Register as a player to join the wait list for an upcoming season. Players 35 and up of all levels welcome. You will be notified by the league commissioner when there is an opening.
       </p>
       <div class="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button href="/registration" variant="primary" size="lg">Register now</Button>

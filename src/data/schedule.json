@@ -536,110 +536,118 @@
     {
       "id": "g049",
       "date": "2026-07-30",
-      "startTime": "8:15 PM",
       "away": "shade-fog",
       "home": "kingspan",
       "arena": "Palace Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 3,
+      "awayScore": 4
     },
     {
       "id": "g050",
       "date": "2026-07-30",
-      "startTime": "7:30 PM",
       "away": "holy-city",
       "home": "revelry",
       "arena": "Royal Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "id": "g051",
       "date": "2026-07-30",
-      "startTime": "9:30 PM",
       "away": "worldvest",
       "home": "dire-wolves",
       "arena": "Palace Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 3
     },
     {
       "id": "g052",
       "date": "2026-07-30",
-      "startTime": "6:45 PM",
       "away": "burns-alley",
       "home": "baird",
       "arena": "Royal Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 6
     },
     {
       "id": "g053",
       "date": "2026-08-06",
-      "startTime": "7:30 PM",
       "away": "dire-wolves",
       "home": "baird",
       "arena": "Royal Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 5,
+      "awayScore": 10
     },
     {
       "id": "g054",
       "date": "2026-08-06",
-      "startTime": "8:15 PM",
       "away": "burns-alley",
       "home": "shade-fog",
       "arena": "Palace Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 6,
+      "awayScore": 8
     },
     {
       "id": "g055",
       "date": "2026-08-06",
-      "startTime": "8:45 PM",
       "away": "holy-city",
       "home": "worldvest",
       "arena": "Royal Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 4,
+      "awayScore": 3
     },
     {
       "id": "g056",
       "date": "2026-08-06",
-      "startTime": "9:30 PM",
       "away": "revelry",
       "home": "kingspan",
       "arena": "Palace Rink",
       "type": "regular",
-      "status": "scheduled"
+      "status": "final",
+      "homeScore": 1,
+      "awayScore": 8
     },
     {
       "id": "p1",
       "date": "2026-08-11",
       "startTime": "8:00 PM",
-      "awayLabel": "Seed 6",
-      "homeLabel": "Seed 3",
       "arena": "Royal Rink",
       "type": "playoff",
-      "status": "scheduled"
+      "status": "scheduled",
+      "away": "revelry",
+      "home": "holy-city"
     },
     {
       "id": "p2",
       "date": "2026-08-11",
       "startTime": "9:15 PM",
-      "awayLabel": "Seed 5",
-      "homeLabel": "Seed 4",
       "arena": "Royal Rink",
       "type": "playoff",
-      "status": "scheduled"
+      "status": "scheduled",
+      "away": "burns-alley",
+      "home": "shade-fog"
     },
     {
       "id": "p3",
       "date": "2026-08-13",
-      "startTime": "7:30 PM",
+      "startTime": "8:15 PM",
       "awayLabel": "Winner of Game 1",
       "homeLabel": "Seed 1",
-      "arena": "Royal Rink",
+      "arena": "Palace Rink",
       "type": "playoff",
       "status": "scheduled"
     },
