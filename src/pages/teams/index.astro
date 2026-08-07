@@ -2,6 +2,9 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import TeamCard from "@/components/TeamCard.astro";
+import SectionHeading from "@/components/SectionHeading.astro";
+import StandingsTable from "@/components/StandingsTable.astro";
+import Button from "@/components/Button.astro";
 import { allTeams } from "@/lib/hockey";
 
 const teams = allTeams;
@@ -20,6 +23,19 @@ const teams = allTeams;
   <section class="container-page py-16 sm:py-20">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {teams.map((team) => <TeamCard team={team} />)}
+    </div>
+  </section>
+
+  <!-- Current standings -->
+  <section class="border-t border-rink-200 bg-rink-50">
+    <div class="container-page py-16 sm:py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <SectionHeading eyebrow="Where things stand" title="Current standings" />
+        <Button href="/schedule#standings" variant="ghost">Results &amp; schedule</Button>
+      </div>
+      <div class="mt-8">
+        <StandingsTable />
+      </div>
     </div>
   </section>
 </BaseLayout>
