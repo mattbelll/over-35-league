@@ -5,11 +5,14 @@
 export const site = {
   name: "Over 35 League",
   shortName: "Over 35 League",
+  // Default page title / social-share (Open Graph) title used when a page
+  // doesn't set its own title (e.g. the home page and share previews).
+  titleDefault: "Over 35 Hockey League - Charleston SC",
   tagline: "Recreational hockey for players 35 and up.",
   description:
     "The Over 35 League is an adult recreational hockey league at Carolina Ice Palace. Eight teams, a full season of games, playoffs — competitive, friendly hockey for players 35 and over.",
-  url: "https://over35league.netlify.app",
-  ogImage: "/og-default.svg",
+  url: "https://over35hockey.netlify.app",
+  ogImage: "/og-default.png",
   location: "Carolina Ice Palace · North Charleston, SC",
   email: "info@over35league.example",
   phone: "(555) 013-7425",

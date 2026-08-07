@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // Update `site` to your production URL before deploying so that the sitemap,
 // canonical URLs and Open Graph tags resolve to absolute links.
 export default defineConfig({
-  site: 'https://over35league.netlify.app',
+  site: 'https://over35hockey.netlify.app',
   output: 'static',
   integrations: [sitemap()],
   vite: {

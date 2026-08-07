@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
   <div class="container-page grid gap-10 py-14 md:grid-cols-3">
     <div>
       <img src="/images/logo.png" alt={site.name} width="1080" height="560" class="h-12 w-auto" />
-      <p class="mt-4 max-w-xs text-sm text-rink-600">{site.tagline} {site.seasonLabel} registration is open now.</p>
+      <p class="mt-4 max-w-xs text-sm text-rink-600">A recreational hockey league in Charleston, SC for players 35 and up. Register to join a future season.</p>
     </div>
 
     <div>
@@ -22,8 +22,10 @@ const year = new Date().getFullYear();
 
     <div>
       <h3 class="text-sm tracking-widest text-ice-700">Contact</h3>
-      <address class="mt-4 space-y-2 text-sm not-italic text-rink-600">
-        <p>{site.location}</p>
+      <address class="mt-4 text-sm not-italic text-rink-600">
+        <p class="font-semibold text-rink-950">Carolina Ice Palace</p>
+        <p>7665 Northwoods Blvd</p>
+        <p>North Charleston, SC 29406</p>
       </address>
       <div class="mt-4 flex gap-3">
         <a href={site.social.facebook} class="text-rink-400 hover:text-ice-600" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
