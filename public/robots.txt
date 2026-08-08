@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://over35hockey.netlify.app/sitemap-index.xml
+Sitemap: https://over35hockey.com/sitemap-index.xml

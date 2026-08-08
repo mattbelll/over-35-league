@@ -11,7 +11,7 @@ export const site = {
   tagline: "Recreational hockey for players 35 and up.",
   description:
     "The Over 35 League is an adult recreational hockey league at Carolina Ice Palace. Eight teams, a full season of games, playoffs — competitive, friendly hockey for players 35 and over.",
-  url: "https://over35hockey.netlify.app",
+  url: "https://over35hockey.com",
   ogImage: "/og-default.png",
   location: "Carolina Ice Palace · North Charleston, SC",
   email: "info@over35league.example",

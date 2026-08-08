@@ -10,6 +10,7 @@ interface Props {
 }
 const { href, title, description, pubDate, author, tags = [], heroImage } = Astro.props;
 const dateLabel = new Intl.DateTimeFormat("en-US", {
+  timeZone: "UTC",
   year: "numeric",
   month: "short",
   day: "numeric",
