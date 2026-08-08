@@ -93,8 +93,8 @@ const glance = [
         <span class="h-px w-6 bg-flare-500" aria-hidden="true"></span>League at a glance
       </h3>
       <dl class="mt-7 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-4 lg:grid-cols-7">
-        {glance.map((stat) => (
-          <div class="flex flex-col items-center gap-2.5 text-center">
+        {glance.map((stat, i) => (
+          <div class={`flex flex-col items-center gap-2.5 text-center ${i === glance.length - 1 ? "max-sm:col-span-2" : ""}`}>
             <span class="grid h-11 w-11 place-items-center rounded-xl bg-ice-500/10 text-ice-700">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={stat.icon} /></svg>
             </span>
