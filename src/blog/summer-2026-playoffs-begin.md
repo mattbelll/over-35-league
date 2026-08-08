@@ -30,8 +30,8 @@ We would also like to extend our sincerest condolences and well wishes to the **
 
 The Summer 2026 playoffs begin **Tuesday, August 11**, with two first-round matchups:
 
-**No. 6 Revelry vs. No. 3 Holy City**
-**No. 5 Burns Alley vs. No. 4 Shade Fog**
+**No. 6 Revelry vs. No. 3 Holy City**\
+**No. 5 Burns Alley vs. No. 4 Shade-FOG**
 
 WorldVest and the Dire Wolves will await the survivors in the semifinals on **Thursday, August 13**.
 
