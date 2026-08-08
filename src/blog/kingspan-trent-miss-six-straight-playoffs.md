@@ -1,6 +1,6 @@
 ---
 title: "Kingspan and Captain Trent Miss Six Straight Playoffs"
-description: "Revelry hammers Kingspan 8–1 on the final night to grab the sixth and final playoff seed — sending Captain Trent Trenga home for a sixth straight season."
+description: "Revelry hammers Kingspan 8–1 on the final night to grab the sixth and final playoff seed — sending Captain Trent home for a sixth straight season."
 pubDate: 2026-08-07
 author: "League Office"
 tags: ["scores", "news"]

@@ -1,6 +1,6 @@
 ---
 title: "WorldVest Wins 2nd Title"
-description: "WorldVest downs the Dire Wolves 7–1 to capture the Spring 2026 Over 35 League Championship — Captain Danny Tanton's second title."
+description: "WorldVest downs the Dire Wolves 7–1 to capture the Winter 2026 Over 35 League Championship — Captain Danny Tanton's second title."
 pubDate: 2026-04-03
 author: "League Office"
 tags: ["championship", "scores"]
@@ -8,7 +8,7 @@ heroImage: "/images/blog-worldvest-champions.png"
 draft: false
 ---
 
-In what can only be described as the greatest championship game in Carolina Ice Palace history—provided you did not look at the scoreboard—the Dire Wolves faced off against WorldVest in the Spring 2026 Over 35 League Championship.
+In what can only be described as the greatest championship game in Carolina Ice Palace history—provided you did not look at the scoreboard—the Dire Wolves faced off against WorldVest in the Winter 2026 Over 35 League Championship.
 
 The hype was substantial.
 

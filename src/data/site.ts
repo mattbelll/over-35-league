@@ -23,7 +23,7 @@ export const site = {
     "https://docs.google.com/forms/d/e/1FAIpQLSeJb3Z3kVAJ_BHzV-81Az62iUDj0Av5Rz6qP980zbKegzbW7A/viewform?embedded=true" as string,
   social: {
     facebook: "https://facebook.com/",
-    instagram: "https://instagram.com/",
+    instagram: "https://www.instagram.com/over35hockey",
     x: "https://x.com/",
   },
 } as const;
