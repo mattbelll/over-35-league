@@ -12,7 +12,7 @@ And with that, the Summer 2026 regular season has officially concluded. Fourteen
 
 At the top of the table sit two very familiar names.
 
-**WorldVest** claims the No. 1 seed, with **Dire Wolves** finishing No. 2. The reigning champions and last season's runner-up have once again found themselves atop the league, apparently under the impression that parity is something for other teams to worry about.
+**WorldVest** claims the No. 1 seed, with **Dire Wolves** finishing No. 2. The reigning champions and last season's runner-up have once again found themselves atop the league, again.
 
 Both have earned first-round byes and the luxury of spending Tuesday night resting their legs, scouting the competition, and presumably explaining to their wives that they still need to go to the rink even though they aren't actually playing.
 
